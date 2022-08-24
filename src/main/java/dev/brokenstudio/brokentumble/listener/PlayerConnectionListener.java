@@ -21,7 +21,7 @@ public class PlayerConnectionListener implements Listener {
         switch (Tumble.getGameState()){
             case LOBBY -> {
                 Bukkit.getOnlinePlayers().forEach(cr -> cr.sendMessage(Tumble.getPrefix()
-                + "The player §f" + player.getName() + " §7has joined the game."));
+                + "§f§l" + player.getName() + " §r§7has joined the game§8§l! (§f§l" + Bukkit.getOnlinePlayers().size() + "§8§l/§7§l12§8§l)"));
                 Tumble.tumble().getLobbyScoreboard().getBoard().setBoard(player);
                 player.teleport(BrokenAPI.api().getLocationAPI().get("tumble_lobby"));
             }

@@ -9,7 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Tumble extends JavaPlugin {
 
-    private final static String PREFIX = "§f§lTumble §8| §7";
+    private final static String PREFIX = "§f§lTumble §8§l| §r§7";
     private static GameState gameState;
     private static Tumble tumble;
     private LobbyScoreboard lobbyScoreboard;
