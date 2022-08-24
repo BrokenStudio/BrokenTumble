@@ -25,6 +25,7 @@ public class SetCommand implements CommandExecutor {
 
         String location = args[0];
         BrokenAPI.api().getLocationAPI().set("tumble", location, ((Player) commandSender).getLocation());
+        commandSender.sendMessage(BrokenAPI.api().getLocationAPI().get(location).getWorld().getName());
         commandSender.sendMessage(Tumble.getPrefix() + "The location was set.");
 
         return true;

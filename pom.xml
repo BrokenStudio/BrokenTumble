@@ -30,6 +30,7 @@
             <groupId>dev.brokenstuduio</groupId>
             <artifactId>BrokenAPI</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.spigotmc</groupId>

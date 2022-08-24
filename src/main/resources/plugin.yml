@@ -3,6 +3,8 @@ author: BrokenStudio
 version: 1.0.0
 api-version: 1.19
 main: dev.brokenstudio.brokentumble.Tumble
+depend:
+  - BrokenAPI
 
 commands:
   set:
