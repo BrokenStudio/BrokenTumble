@@ -1,10 +1,8 @@
 package dev.brokenstudio.brokentumble.scoreboard;
 
-import dev.brokenstudio.brokenapi.player.BrokenPlayer;
 import dev.brokenstudio.brokenapi.scoreboard.BrokenBoard;
-import org.bukkit.entity.Player;
-
-import java.util.concurrent.atomic.AtomicReference;
+import dev.brokenstudio.brokentumble.Tumble;
+import dev.brokenstudio.brokentumble.team.TeamHandler;
 
 public class LobbyScoreboard {
 
@@ -31,8 +29,15 @@ public class LobbyScoreboard {
             stringAtomicReference.set(" §7♦ §8▪▪▪ §f§l45");
         });
         board.addEmpty();
-        board.addEntry(" §f☁ §8§l| §7Teams");
-        board.addEntry(" §7♦ §8▪▪▪ §c§lForbidden");
+        board.addEntry(" §f☁ §8§l| §7Team");
+        board.addEntry(((player, bp, stringAtomicReference) -> {
+            if(!Tumble.tumble().getTeamHandler().isPlayerInTeam(player)){
+                stringAtomicReference.set(" §7♦ §8▪▪▪ §7❌");
+            }else{
+                TeamHandler.Teams team = Tumble.tumble().getTeamHandler().getPlayerTeam(player);
+                stringAtomicReference.set(" §7♦ §8▪▪▪ " + team.color + "§l" + team.teamName);
+            }
+        }));
         board.addLine(24);
         board.addEmpty();
         board.addEntry("§f§lBrokenStudio.de");

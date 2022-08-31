@@ -9,3 +9,5 @@ depend:
 commands:
   set:
     permission: broken.command.set
+  createmap:
+    permission: broken.command.createmap
